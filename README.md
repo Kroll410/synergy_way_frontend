@@ -30,10 +30,7 @@ To install this part u need continue next steps:
 ```
     docker-compose up -d --
 ```
-### ... And running the container
-```
-    docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true react:dev 
-```
+### ... And it will run the container
 
 ### You will be able to see created container working on your machine with command
 ```
