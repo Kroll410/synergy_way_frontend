@@ -56,6 +56,7 @@ const Edit = ({ rowData, pathname, updateData, handleClose }) => {
     const generatePopupInput = (key, allValues) => {
         return (
             <select name={key} onChange={(e) => {handleInputChange(e)}}>
+                <option disabled selected> -- select an option -- </option>
                 {
                     [...allValues].map((groupName) => {
                         return <option value={groupName}>{groupName}</option>
@@ -67,7 +68,7 @@ const Edit = ({ rowData, pathname, updateData, handleClose }) => {
 
     
     useEffect(async () => {
-        const response = await axios.get('http://127.0.0.1:8000/groups/');
+        const response = await axios.get('http://0.0.0.0:8000/groups/');
         const result = [...response.data['data']].map((group) => {
             return group['name']
         })
@@ -80,7 +81,7 @@ const Edit = ({ rowData, pathname, updateData, handleClose }) => {
 
     const updateRow = (e) => {  
         e.preventDefault()
-        axios.patch(`http://127.0.0.1:8000/${pathname}/`, values)
+        axios.patch(`http://0.0.0.0:8000/${pathname}/`, values)
         .then(response => {
             updateData(prevstate => ({
                 ...prevstate, 
@@ -103,7 +104,7 @@ const Edit = ({ rowData, pathname, updateData, handleClose }) => {
 
     const deleteRow = (e) => {
         e.preventDefault()
-        axios.delete(`http://127.0.0.1:8000/${pathname}/`, {data: values})
+        axios.delete(`http://0.0.0.0:8000/${pathname}/`, {data: values})
         .then(response => {updateData(prevstate => ({
             ...prevstate, 
             data: prevstate.data.filter((el) => {

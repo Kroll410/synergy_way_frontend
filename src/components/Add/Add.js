@@ -53,7 +53,7 @@ const Add = ({rowFields, pathname, updateData}) => {
     const[popupData, setPopupData] = useState([])
 
     useEffect(async () => {
-        const response = await axios.get('http://127.0.0.1:8000/groups/');
+        const response = await axios.get('http://0.0.0.0:8000/groups/');
         const result = [...response.data['data']].map((group) => {
             return group['name']
         })
