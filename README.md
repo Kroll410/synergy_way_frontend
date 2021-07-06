@@ -37,7 +37,7 @@ To install this part u need continue next steps:
     docker stats
 ```
 
-### If You have not already set up back-end part, check README file in the [back-end part repository](https://github.com/Kroll410/synergy_way_backend)
+### If you have not already set up back-end part, check README file in the [back-end part repository](https://github.com/Kroll410/synergy_way_backend)
 
 
 
